@@ -1,9 +1,6 @@
 package org.caps.microservice.common.domain;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Table(name = "tb_news")
@@ -14,11 +11,16 @@ public class TbNews {
 
     private String title;
 
+    private String author;
+
     private String content;
 
     private Date created;
 
     private Date updated;
+
+    @Column(name = "memId")
+    private Long memid;
 
     /**
      * @return id
@@ -46,6 +48,20 @@ public class TbNews {
      */
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    /**
+     * @return author
+     */
+    public String getAuthor() {
+        return author;
+    }
+
+    /**
+     * @param author
+     */
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     /**
@@ -88,5 +104,19 @@ public class TbNews {
      */
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    /**
+     * @return memId
+     */
+    public Long getMemid() {
+        return memid;
+    }
+
+    /**
+     * @param memid
+     */
+    public void setMemid(Long memid) {
+        this.memid = memid;
     }
 }
